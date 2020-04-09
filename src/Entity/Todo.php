@@ -6,11 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TodoRepository")
-//  * @ApiResource
-//  * @ApiFilter(BooleanFilter::class, properties={"deleted"})
  */
 class Todo
 {
@@ -23,16 +22,19 @@ class Todo
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $label;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank
      */
     private $creationDate;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\NotBlank
      */
     private $deleted;
 
