@@ -2,10 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>TodoList</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">To-Do-List</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path("api_list", {list:"list"}) }}">Todo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Supprimés</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Ajouter">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Ajout</button>
+    </form>
+  </div>
+</nav>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
