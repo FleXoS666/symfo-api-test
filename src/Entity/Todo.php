@@ -9,8 +9,8 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TodoRepository")
- * @ApiResource
- * @ApiFilter(BooleanFilter::class, properties={"deleted"})
+//  * @ApiResource
+//  * @ApiFilter(BooleanFilter::class, properties={"deleted"})
  */
 class Todo
 {
